@@ -1,21 +1,23 @@
-/**
-* Template Name: Bootslander
-* Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
-/* Fonts */
-:root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "HP Simplified",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+@font-face {
+  font-family: 'Ranelte';
+  src: url('/fonts/Ranelte-NorReg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
+
+:root {
+  --default-font: "Ranelte", sans-serif;
+}
+
+html, body {
+  font-family: var(--default-font);
+}
+
+* {
+  font-family: inherit; /* Apply the root font to all elements */
+}
+
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
@@ -142,6 +144,34 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
+
+
+
+
+
+
+/* 
+element.style {
+  width: 50px;
+  height: 50px;
+  transform: translate3d(0px, 0px, 0px);
+}
+.e-lottie__container svg, .e-lottie__container svg * {
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+.elementor *, .elementor :after, .elementor :before {
+  box-sizing: border-box;
+}
+
+ */
+.rctimg{
+  align-items: center;
+  padding-left: 130px;
+}
+
+
 .header {
   --background-color: #DB002F;
   --default-color: #ffffff;
@@ -158,7 +188,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 65px;
+  max-height: 95px;
   margin-right: 8px;
 }
 
@@ -846,7 +876,7 @@ section,
   letter-spacing: 1px;
   display: inline-block;
   padding: 10px 28px 12px 28px;
-  border-radius: 50px;
+  border-radius: 10px;
   transition: 0.5s;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
 }
@@ -882,18 +912,18 @@ section,
 }
 
 .hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  animation: up-down 3s ease-in-out infinite alternate-reverse both;
 }
 
 @media (max-width: 640px) {
   .hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 26px;
+    line-height: 30px;
   }
 
   .hero p {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 12px;
+    line-height: 21px;
     margin-bottom: 30px;
   }
 
@@ -901,7 +931,33 @@ section,
   .hero .btn-watch-video {
     font-size: 13px;
   }
+  
+.hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
+  z-index: 1;
+  transform: scale(1.5);
 }
+}
+@keyframes rotateFromBottom {
+  0% {
+    transform: rotate(20deg); /* Rotate from 20 degrees */
+  }
+  100% {
+    transform: rotate(0deg); /* Rotate back to 0 degrees */
+  }
+}
+
+.img {
+  transform-origin: bottom center; /* Ensure rotation is from the bottom */
+  display: inline-block; /* Ensure that the image respects the transform origin */
+  animation: rotateFromBottom 6.8s ease-in-out infinite alternate-reverse both;
+}
+
 
 .hero .hero-waves {
   display: block;
@@ -1073,18 +1129,202 @@ section,
 .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
   margin-top: -40px;
 }
+@media (max-width: 768px) {
+
+  .details .features-item h3 {
+    font-weight: 600;
+    font-size: 10px;
+  }
+
+  .section-title div {
+    color: var(--heading-color);
+    margin: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: var(--heading-font);
+}
+.section-title h2 {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    /* color: 
+color-mix(in srgb, var(--default-color), transparent 50%); */
+    position: relative;
+}
+
+/* details */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+  .about .content .read-more {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    font-family: var(--heading-font);
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  .about .icon-box {
+    background-color: var(--surface-color);
+    padding: 50px 40px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease-out 0s;
+  }
+  
+  .about .icon-box i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 28px;
+    line-height: 0;
+    transition: all 0.4s ease-out 0s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+    color: var(--accent-color);
+  }
+  
+  .about .icon-box h3 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .about .icon-box p {
+    margin-bottom: 0;
+  }
+
+}
 
 @media (max-width: 768px) {
 
   .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
   .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
     margin-top: 0;
+ 
+
+    
   }
 }
 
 /*--------------------------------------------------------------
+serv
 # Features Section
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services .service-item {
+  position: relative;
+  padding-top: 40px;
+}
+
+.services .service-item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.services .service-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--accent-color);
+  border-right: 5px solid var(--background-color);
+}
+
+.services .service-item .icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin-right: 50px;
+  line-height: 0;
+}
+
+.services .service-item .icon i {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 56px;
+  transition: ease-in-out 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+.services .service-item .icon:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  background: color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-radius: 50px;
+  z-index: 1;
+  bottom: -15px;
+  right: -15px;
+  transition: 0.3s;
+}
+
+.services .service-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.services .service-item .title a {
+  color: var(--heading-color);
+}
+
+.services .service-item .title a:hover {
+  color: var(--accent-color);
+}
+
+.services .service-item .description {
+  line-height: 24px;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
 .features .features-item {
   background-color: var(--surface-color);
   display: flex;
@@ -1149,7 +1389,7 @@ section,
   position: relative;
   text-align: center;
   box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  border-radius: 10px;
   z-index: 0;
 }
 
@@ -1180,7 +1420,7 @@ section,
 
 @media (max-width: 640px) {
   .details .features-item+.features-item {
-    margin-top: 40px;
+    margin-top: 30px;
   }
 }
 
@@ -1205,7 +1445,7 @@ section,
 }
 
 .details .features-item ul i {
-  font-size: 20px;
+  font-size: 10px;
   padding-right: 4px;
   color: var(--accent-color);
 }
@@ -1348,7 +1588,7 @@ section,
 
 @media (min-width: 992px) {
   .testimonials .testimonial-item p {
-    width: 80%;
+    width: 50%;
   }
 }
 
